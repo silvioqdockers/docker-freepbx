@@ -159,7 +159,7 @@ RUN sed -i 's/\(^upload_max_filesize = \).*/\120M/' /etc/php5/apache2/php.ini \
     && sed -i 's/AllowOverride None/AllowOverride All/' /etc/apache2/apache2.conf
 
 # Configure Asterisk database in MYSQL
-RUN /etc/init.d/mysqld start \
+RUN /etc/init.d/mysql start \
     && mysqladmin -u root create asterisk \
     && mysqladmin -u root create asteriskcdrdb \
     && mysql -u root -e "GRANT ALL PRIVILEGES ON asterisk.* TO $ASTERISKUSER@localhost IDENTIFIED BY '';" \
