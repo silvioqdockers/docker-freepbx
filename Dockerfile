@@ -1,4 +1,4 @@
-FROM phusion/baseimage
+FROM debian:jessie
 MAINTAINER Jason Martin <jason@greenpx.co.uk>
 
 # Set environment variables
